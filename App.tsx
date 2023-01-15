@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import AppText from './src/components/AppText';
 import AppTextInput from './src/components/AppTextInput';
 import CommandsDropDown from './src/components/CommandsDropDown';
+import {dropDownMap, dropDownClassMap} from './src/data';
 
 function App(): JSX.Element {
   const [input, setInput] = useState('');
@@ -56,7 +57,10 @@ const styles = StyleSheet.create({
   defaultInput: {},
   heading1: {fontSize: 32},
   heading2: {fontSize: 24},
-  textItalic: {fontSize: 16, fontStyle: 'italic'},
+  textItalic: {
+    fontSize: 16,
+    fontStyle: 'italic',
+  },
   regularText: {fontSize: 16},
   sectionContainer: {
     paddingTop: 20,
@@ -67,44 +71,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
-export const dropDownMap = {
-  H1: 'Heading 1',
-  H2: 'Heading 2',
-  Italic: 'Text Italic',
-  Text: 'Regular Text',
-};
-
-export const dropDownClassMap = {
-  H1: 'heading1',
-  H2: 'heading2',
-  Italic: 'textItalic',
-  Text: 'regularText',
-};
-
-export type dropDownDataType = (typeof dropDownData)[0];
-
-export const dropDownData = [
-  {
-    label: 'H1',
-    heading: 'Heading 1',
-    description: 'Big Section Heading',
-  },
-  {
-    label: 'H2',
-    heading: 'Heading 2',
-    description: 'Medium Section Heading',
-  },
-  {
-    label: 'Italic',
-    heading: 'Text Italic',
-    description: 'Italic text',
-  },
-  {
-    label: 'Text',
-    heading: 'Regular Text',
-    description: 'Regular text for paragraph',
-  },
-];
-
-export const dropDownArr = dropDownData.map(el => el.label);

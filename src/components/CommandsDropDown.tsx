@@ -1,7 +1,7 @@
 import {Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
-import {dropDownData, dropDownDataType} from '../../App';
 import AppText from './AppText';
+import {dropDownData, dropDownDataType} from '../data';
 
 type props = {handleInputType: (label: string) => void};
 
