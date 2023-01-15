@@ -2,6 +2,7 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {dropDownData, dropDownDataType} from '../../App';
 import AppText from './AppText';
+
 type props = {handleInputType: (label: string) => void};
 
 const CommandsDropDown: React.FC<props> = ({handleInputType}) => {
@@ -34,7 +35,7 @@ const CommandsDropDown: React.FC<props> = ({handleInputType}) => {
 
 const styles = StyleSheet.create({
   dropDown: {
-    borderColor: 'gray',
+    borderColor: '#d8d8d8',
     borderWidth: 1,
   },
   option: {
@@ -45,11 +46,11 @@ const styles = StyleSheet.create({
   },
   borderBottom: {
     borderBottomWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#d8d8d8',
   },
   optionBox: {
-    marginRight: 5,
-    borderColor: 'gray',
+    marginRight: 10,
+    borderColor: '#d8d8d8',
     borderWidth: 1,
     width: 40,
     height: 40,
@@ -58,7 +59,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: 'hsla(0,0%,95%,.644)',
   },
-
   para: {
     fontSize: 8,
     color: 'gray',

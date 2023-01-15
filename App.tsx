@@ -7,11 +7,8 @@ import CommandsDropDown from './src/components/CommandsDropDown';
 function App(): JSX.Element {
   const [input, setInput] = useState('');
   const [inputType, setInputType] = useState('default');
+
   const commandsDropDownOn = input === '/';
-  const handleInputType = (label: string) => {
-    setInput('');
-    setInputType(label);
-  };
 
   const placeholder =
     inputType === 'default'
@@ -25,6 +22,11 @@ function App(): JSX.Element {
     inputType === 'default'
       ? styles.defaultInput
       : styles[currentDropDownStyleMap as keyof typeof styles];
+
+  const handleInputType = (label: string) => {
+    setInput('');
+    setInputType(label);
+  };
 
   return (
     <View style={styles.sectionContainer}>
@@ -57,22 +59,10 @@ const styles = StyleSheet.create({
   textItalic: {fontSize: 16, fontStyle: 'italic'},
   regularText: {fontSize: 16},
   sectionContainer: {
-    marginTop: 32,
+    paddingTop: 20,
     paddingHorizontal: 24,
     backgroundColor: 'white',
     flex: 1,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
   },
 });
 

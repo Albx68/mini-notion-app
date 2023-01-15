@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-export default function AppTextInput({
+const AppTextInput = ({
   style,
   placeholder,
   onChangeText,
@@ -17,7 +17,7 @@ export default function AppTextInput({
   placeholder: string;
   onChangeText: Dispatch<SetStateAction<string>>;
   value: string;
-}) {
+}) => {
   const baseStyle = StyleSheet.create({
     fontFamily: 'RobotoSlab-Regular' as ViewStyle | TextStyle | ImageStyle,
     color: '#000' as TextStyle,
@@ -32,8 +32,11 @@ export default function AppTextInput({
     <TextInput
       style={[...newStyle]}
       placeholder={placeholder}
+      placeholderTextColor="gray"
       onChangeText={onChangeText}
       value={value}
     />
   );
-}
+};
+
+export default AppTextInput;
